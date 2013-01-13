@@ -132,8 +132,9 @@ public class SkeletonActivity extends Activity {
     
     public void sendMail(){
     	String[] recipients;
+    	String date;
+    	date = datePicker.getMonth()+1+"/"+datePicker.getDayOfMonth()+"/"+datePicker.getYear();
     	
-    	//TODO null pointer
     	if(EmailsActivity.emailList != null && EmailsActivity.emailList.length()>0)
     	{
     		recipients = EmailsActivity.emailList.getText().toString().split("\n");
@@ -142,7 +143,7 @@ public class SkeletonActivity extends Activity {
     		intent.setType("text/plain");
     		intent.putExtra(Intent.EXTRA_EMAIL, recipients);
     		intent.putExtra(Intent.EXTRA_SUBJECT,"Guest Pin Changed");
-    		intent.putExtra(Intent.EXTRA_TEXT, "The new door pin is: "+pinLabel.getText());
+    		intent.putExtra(Intent.EXTRA_TEXT, "The new guest door pin as of "+date+" is: "+pinLabel.getText());
     		startActivity(intent); 
     	}else{
     		Toast toast = Toast.makeText(getApplicationContext(), "Please Enter Recipients", Toast.LENGTH_SHORT);

@@ -9,7 +9,7 @@ public class EmailsActivity extends Activity {
 	
 	private static final String PREFS_NAME = "emails";
 	public static TextView emailList;
-
+	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
